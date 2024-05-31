@@ -4,6 +4,7 @@ import { CharListContext } from '../contexts/char_list_context';
 import Card from './card';
 import Editor from './editor';
 import Navbar from './navbar';
+import CardLayout from './card_layout';
 
 export default function Display() {
     const { charList } = useContext(CharListContext);
@@ -13,13 +14,13 @@ export default function Display() {
     return (
         <div>
             <Navbar mode={mode} setMode={setMode} />
-            <div className="flex">
+            <div className="p-4 h-max bg-slate-800 flex">
                 <Editor mode={mode} selectedChar={selectedChar} setSelectedChar={setSelectedChar} />
-                <div className="grid grid-cols-3 gap-4">
+                <CardLayout>
                     {charList.map(char => (
                         <Card key={char.id} char={char} />
                     ))}
-                </div>
+                </CardLayout>
             </div>
         </div>
     );

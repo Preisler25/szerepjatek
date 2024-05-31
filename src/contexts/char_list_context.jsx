@@ -1,3 +1,5 @@
+import React, { createContext, useState } from 'react';
+import Char from '../models/char';
 export const CharListContext = createContext();
 
 const CharListProvider = ({ children }) => {
