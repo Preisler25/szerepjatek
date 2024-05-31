@@ -1,3 +1,4 @@
+// Char.js
 class Char {
     constructor(id, name, role, strength, health, img) {
         this.id = id;
@@ -8,3 +9,5 @@ class Char {
         this.img = img;
     }
 }
+
+export default Char;
