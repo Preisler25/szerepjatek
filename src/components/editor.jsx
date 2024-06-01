@@ -24,7 +24,8 @@ export default function Editor({ mode, selectedChar, setSelectedChar }) {
     };
 
     return (
-        <div className="bg-gray-100 rounded-lg p-4 shadow-lg w-2/3 h-2/3">
+        <div className="bg-gray-100 rounded-lg p-4 shadow-lg w-2/3 h-4/5">
+            <h1 className="text-2xl font-bold mb-4">{mode === 'create' ? 'Create Character' : 'Edit Character'}</h1>
             {mode === 'edit' && (
                 <div>
                 <label htmlFor="sc">Selected Character:</label>

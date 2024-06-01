@@ -12,9 +12,9 @@ export default function Display() {
     const [selectedChar, setSelectedChar] = useState(charList[0]);
 
     return (
-        <div>
+        <div className='border-2 border-red-800 rounded-lg'>
             <Navbar mode={mode} setMode={setMode} />
-            <div className="p-4 h-max bg-slate-800 flex">
+            <div className="p-4 h-screen bg-slate-800 flex">
                 <Editor mode={mode} selectedChar={selectedChar} setSelectedChar={setSelectedChar} />
                 <CardLayout>
                     {charList.map(char => (

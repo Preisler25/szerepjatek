@@ -10,6 +10,9 @@ export default function Card({ char }) {
         cardColor = "bg-blue-100";
     } else if (char.role === "Bounty Hunter") {
         cardColor = "bg-yellow-100";
+    } else
+    {
+        cardColor = "bg-gray-100";
     }
 
     return (
