@@ -10,7 +10,27 @@ export default function Editor({ mode, selectedChar, setSelectedChar }) {
   );
   const [error, setError] = useState("");
 
+  const isValidUrl = (url) => {
+    const urlRegex = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm;
+    return urlRegex.test(url);
+  };
+
   const handleSave = () => {
+    if (!character.name) {
+      setError("Name cannot be empty.");
+      return;
+    }
+
+    if (!character.img) {
+      setError("Image URL cannot be empty.");
+      return;
+    }
+
+    if (!isValidUrl(character.img)) {
+      setError("Image URL is not valid.");
+      return;
+    }
+
     if (character.strength + character.health <= 100) {
       if (mode === "create") {
         addCharacter(character);
