@@ -12,18 +12,6 @@ class Char {
       throw new Error("Strength and health cannot exceed 100.");
     }
 
-    if (!name) {
-      throw new Error("Name cannot be empty.");
-    }
-
-    if (!img) {
-      throw new Error("Image URL cannot be empty.");
-    }
-
-    if (!this.isValidUrl(img)) {
-      throw new Error("Image URL is not valid.");
-    }
-
     this.id = id;
     this.name = name;
     this.role = role;

@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 import Char from "../models/char";
-
 export const CharListContext = createContext();
 
 const CharListProvider = ({ children }) => {
@@ -40,6 +39,9 @@ const CharListProvider = ({ children }) => {
   const [charList, setCharList] = useState([dv, ls, bf, rd]);
 
   const addCharacter = (char) => {
+    console.log(charList.length);
+    const newId = charList.length ? charList.length + 1 : 1;
+    char.id = newId;
     setCharList([...charList, char]);
   };
 

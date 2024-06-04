@@ -15,9 +15,18 @@ export default function Editor({ mode, selectedChar, setSelectedChar }) {
     return urlRegex.test(url);
   };
 
+  const isNameUnique = (name) => {
+    return !charList.some((char) => char.name === name);
+  };
+
   const handleSave = () => {
     if (!character.name) {
       setError("Name cannot be empty.");
+      return;
+    }
+
+    if (!isNameUnique(character.name)) {
+      setError("A character with this name already exists.");
       return;
     }
 
